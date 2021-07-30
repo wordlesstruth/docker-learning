@@ -8,6 +8,12 @@ This utility was inspired by a team-members file affectionately referred to as `
 
 This list and the usage/examples are meant to separate the wheat from the chaff and get to the heart of the **most useful only (ime)** docker commands. There are quite a few flags, and for full reference you can view the docker hub, but that's not what this is for.
 
+> *I don't know half of you half as well as I should like, and I like less than half of you half as well as you deserve.*
+>
+> -~~*Bilbo Baggins*~~
+>
+> -*me looking at docker* `run` *commands*
+
 ## Table of contents
 
 - [docker build](#build)
