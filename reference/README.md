@@ -25,6 +25,8 @@ This list and the usage/examples are meant to separate the wheat from the chaff 
 
 These are my most used build commands and flags
 
+This section of commands assumes you to be in [docker-build](./docker-build)
+
 ```bash
 # -t
 # 'normal' docker build with a tag and context
@@ -77,21 +79,21 @@ docker run --rm -d ubuntu:20.04 "sleep" "10"
 
 # -e
 # set an environment variable at runtime
-docker run --rm -e TEXT="hello world" ubuntu:20.04 env
+docker run --rm -it -e TEXT="hello world" ubuntu:20.04 env
 
 # --network
 # set the network to use at runtime
-docker run --rm --network="host" ubuntu:20.04 hostname
+docker run --rm -it --network="host" ubuntu:20.04 hostname
 
 # -v
 # NOTE: volumes will merit their own section, so we'll focus on syntax here
 # but there is a script that lays out how to transfer to a volume
 # ro --> readonly
-docker run --rm -v /unnamed_volume ubuntu:20.04 "echo" "unnamed volume"
-docker run --rm -v myvolume:/my-volume-with-long-name-so-you-can-see ubuntu:20.04 "ls" "/"
-docker run --rm \
+docker run --rm -it -v /unnamed_volume ubuntu:20.04 "echo" "unnamed volume"
+docker run --rm -it -v myvolume:/my-volume-with-long-name-so-you-can-see ubuntu:20.04 "ls" "/"
+docker run -it --rm \
   -w /sw/ \
-  -v <your_dir>/docker-learning/Reference/docker-run/input/:/sw/:ro \
+  -v ${PWD}/input/:/sw/:ro \
   ubuntu:20.04 "cat" "hello-world.txt"
 
 ```
@@ -121,7 +123,7 @@ docker ps -a
 
 ### **NOTE**
 
-This section assumes you're in the folder [docker-push-pull-tag](./docker-push-pull-tag)
+This section assumes you're in the folder [docker-push-pull-tag](./docker-push-pull-tag). It also pre-supposes you have an artifactory repo you can push and pull to.
 
 ```bash
 # first build an image, yes - you could tag it here as well
@@ -171,7 +173,7 @@ Remove an image or remove a container
 
 ```bash
 # run hello-world to ensure we have this image; can skip if this exists
-docker run hello-world
+docker run --rm hello-world
 
 # rmi
 # remove hello world image
