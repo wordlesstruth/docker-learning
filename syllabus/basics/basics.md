@@ -6,17 +6,17 @@
 
 ## table of contents
 
-- [Docker vs. Virtual machine](#docker-vs.-virtual-machine)
+- [Docker vs. Virtual machine](#docker-vs-virtual-machine)
 - [Docker image vs container](#image-vs-container)
 - [Docker file types](#docker-file-types)
   - [Dockerfile](#dockerfile)
-  - [.dockerignore](#.dockerignore)
-  - [docker-compose.yml](#docker-compose.yml)
-  - [.env](#.env)
+  - [dockerignore](#dockerignore)
+  - [docker-compose.yml](#docker-composeyml)
+  - [.env](#env)
 
 ## Docker vs. Virtual machine
 
-Docker is a lighter weight (when it wants to be) tool than full fledged virtual machine. At it's most basic level, a Docker image can be as simple as a scratch image with a binary (and what that binary needs to run).
+Docker is a lighter weight (when it wants to be) tool than a full fledged virtual machine. At it's most basic level, a Docker image can be as simple as a scratch image with a binary (and what that binary needs to run).
 
 Every image starts with some `FROM` statement. This statement dictates the nature of that image. Typically, you will see some operating system as the basis of a layer. This is, in my opinion, how some people start to get lost in the difference between docker and a virtual machine. Really all of these layers are all calling to the same linux kernel (whose architecture is dependent on the host you're running on. For windows this could be a wsl backend for instance).
 
