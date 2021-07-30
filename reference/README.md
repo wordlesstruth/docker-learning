@@ -90,8 +90,8 @@ docker run --rm --network="host" ubuntu:20.04 hostname
 docker run --rm -v /unnamed_volume ubuntu:20.04 "echo" "unnamed volume"
 docker run --rm -v myvolume:/my-volume-with-long-name-so-you-can-see ubuntu:20.04 "ls" "/"
 docker run --rm \
-  -w /pdsw/ \
-  -v /d/workspaces/onboarding/docker/Reference/docker-run/input/:/pdsw/:ro \
+  -w /sw/ \
+  -v <your_dir>/docker-learning/Reference/docker-run/input/:/sw/:ro \
   ubuntu:20.04 "cat" "hello-world.txt"
 
 ```
